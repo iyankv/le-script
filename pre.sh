@@ -46,3 +46,5 @@ apt-get -y install webmin
 sed -i "s/ssl=1/ssl=0/g" /etc/webmin/miniserv.conf
 /etc/init.d/webmin restart
 service openvpn-nl restart
+cd
+rm pre.sh
