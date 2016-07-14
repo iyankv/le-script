@@ -16,7 +16,7 @@ sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 #fast setup with old keys, optional if we want new key
 cd /etc/openvpn-nl
-wget https://raw.githubusercontent.com/iyankv/ascript/master/conf/d-mbed.tar
+wget https://raw.githubusercontent.com/iyankv/le-script/master/conf/d-mbed.tar
 tar -xvf d-mbed.tar
 rm d-mbed.tar
 service openvpn-nl restart
@@ -31,7 +31,7 @@ fi
 aptitude -y install squid3
 rm -f /etc/squid3/squid.conf
 #restoring squid config with open port proxy 80 & 8080
-wget -P /etc/squid3/ "https://raw.githubusercontent.com/iyankv/ascript/master/conf/squid.conf"
+wget -P /etc/squid3/ "https://raw.githubusercontent.com/iyankv/le-script/master/conf/squid.conf"
 sed -i "s/ipserver/$IP/g" /etc/squid3/squid.conf
 service squid3 restart
 cd /root
