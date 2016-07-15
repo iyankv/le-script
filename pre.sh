@@ -1,5 +1,5 @@
 #needed by openvpn-nl
-apt-get install apt-transport-https
+apt-get -y install apt-transport-https
 #adding source list
 echo "deb https://openvpn.fox-it.com/repos/deb wheezy main" > /etc/apt/sources.list.d/foxit.list
 apt-get update
@@ -8,8 +8,8 @@ apt-key add fox-crypto-gpg.asc
 apt-get update
 cd /root
 #installing normal openvpn, easy rsa & openvpn-nl
-apt-get install openvpn easy-rsa 
-apt-get install openvpn-nl
+apt-get -y install openvpn easy-rsa 
+apt-get -y install openvpn-nl
 #ipforward
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
