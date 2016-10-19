@@ -28,7 +28,7 @@ if [ "$IP" = "" ]; then
         IP=$(curl -s ifconfig.me)
 fi
 #installing squid3
-aptitude install squid3
+apt-get -y install squid3
 rm -f /etc/squid3/squid.conf
 #restoring squid config with open port proxy 80 & 8080
 wget -P /etc/squid3/ "https://raw.githubusercontent.com/iyankv/le-script/master/conf/squid.conf"
